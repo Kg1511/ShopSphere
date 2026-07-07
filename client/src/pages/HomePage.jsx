@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import API from '../api';
 import ProductCard from '../components/ProductCard';
@@ -9,11 +9,75 @@ const categories = [
   { name: 'Home & Living', icon: '🏠', desc: 'Décor & Comfort' },
   { name: 'Sports', icon: '🏆', desc: 'Gear & Fitness' },
   { name: 'Accessories', icon: '⌚', desc: 'Watches & More' },
+  { name: 'Books', icon: '📚', desc: 'Read & Learn' },
+];
+
+const testimonials = [
+  {
+    id: 1,
+    name: 'Priya Sharma',
+    location: 'Mumbai',
+    avatar: '👩🏽',
+    rating: 5,
+    review: 'Absolutely love ShopSphere! The noise-cancelling headphones I ordered arrived in perfect condition. The quality exceeded my expectations and the checkout was so smooth.',
+    product: 'Wireless Headphones',
+  },
+  {
+    id: 2,
+    name: 'Arjun Mehta',
+    location: 'Bangalore',
+    avatar: '👨🏽',
+    rating: 5,
+    review: 'Best online shopping experience I have had. The Smart Fitness Watch is exactly as described — incredible build quality and the delivery was super fast!',
+    product: 'Smart Fitness Watch',
+  },
+  {
+    id: 3,
+    name: 'Sneha Reddy',
+    location: 'Hyderabad',
+    avatar: '👩🏾',
+    rating: 5,
+    review: 'The premium leather jacket fits perfectly and the quality is top-notch. Customer support was very helpful when I had a size query. Will definitely shop again!',
+    product: 'Premium Leather Jacket',
+  },
+  {
+    id: 4,
+    name: 'Rahul Gupta',
+    location: 'Delhi',
+    avatar: '👨🏻',
+    rating: 5,
+    review: 'Bought the 4K Laptop and the Mechanical Keyboard together. Both are outstanding products. Fast shipping, great packaging, and the prices are unbeatable.',
+    product: 'Ultra-Slim 4K Laptop',
+  },
+  {
+    id: 5,
+    name: 'Kavya Nair',
+    location: 'Kochi',
+    avatar: '👩🏼',
+    rating: 5,
+    review: 'ShopSphere is my go-to store now. Got the Bamboo Cutting Board Set and the candle collection — perfect gifts for my family. Packaging was gorgeous!',
+    product: 'Home & Living Collection',
+  },
 ];
 
 export default function HomePage() {
   const [featured, setFeatured] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+  const [slideDir, setSlideDir] = useState('next');
+  const autoPlayRef = useRef(null);
+
+  const goToSlide = (index, dir = 'next') => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setSlideDir(dir);
+    setActiveSlide(index);
+    setTimeout(() => setIsAnimating(false), 400);
+  };
+
+  const next = () => goToSlide((activeSlide + 1) % testimonials.length, 'next');
+  const prev = () => goToSlide((activeSlide - 1 + testimonials.length) % testimonials.length, 'prev');
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -28,6 +92,11 @@ export default function HomePage() {
     };
     fetchProducts();
   }, []);
+
+  useEffect(() => {
+    autoPlayRef.current = setInterval(next, 4000);
+    return () => clearInterval(autoPlayRef.current);
+  }, [activeSlide]);
 
   return (
     <>
@@ -124,6 +193,63 @@ export default function HomePage() {
             <Link to="/products" className="btn btn-secondary btn-lg">
               View All Products →
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Slider */}
+      <section className="section testimonials-section" id="reviews-section">
+        <div className="container">
+          <div className="section-header">
+            <h2>What Our Customers Say</h2>
+            <p>Thousands of happy shoppers trust ShopSphere every day</p>
+          </div>
+
+          <div className="testimonials-wrapper">
+            <button className="testimonial-nav prev" onClick={prev} aria-label="Previous review">
+              ‹
+            </button>
+
+            <div className="testimonials-track">
+              {testimonials.map((t, i) => (
+                <div
+                  key={t.id}
+                  className={`testimonial-card ${
+                    i === activeSlide ? 'active' : ''
+                  } ${i === activeSlide && slideDir === 'next' ? 'slide-in-right' : ''} ${
+                    i === activeSlide && slideDir === 'prev' ? 'slide-in-left' : ''
+                  }`}
+                >
+                  <div className="testimonial-stars">
+                    {'★'.repeat(t.rating)}
+                  </div>
+                  <p className="testimonial-review">"{t.review}"</p>
+                  <div className="testimonial-footer">
+                    <div className="testimonial-avatar">{t.avatar}</div>
+                    <div>
+                      <div className="testimonial-name">{t.name}</div>
+                      <div className="testimonial-meta">{t.location} · {t.product}</div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <button className="testimonial-nav next" onClick={next} aria-label="Next review">
+              ›
+            </button>
+          </div>
+
+          {/* Dots */}
+          <div className="testimonial-dots">
+            {testimonials.map((_, i) => (
+              <button
+                key={i}
+                className={`testimonial-dot ${i === activeSlide ? 'active' : ''}`}
+                onClick={() => goToSlide(i, i > activeSlide ? 'next' : 'prev')}
+                aria-label={`Go to review ${i + 1}`}
+              />
+            ))}
           </div>
         </div>
       </section>

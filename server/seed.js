@@ -216,6 +216,99 @@ const products = [
     rating: 4.4,
     numReviews: 143,
   },
+  // Books
+  {
+    name: 'Atomic Habits',
+    description:
+      'James Clear\'s #1 New York Times bestseller on building good habits and breaking bad ones. Tiny changes, remarkable results. A must-read for personal development.',
+    price: 499,
+    category: 'Books',
+    image: 'https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=500&auto=format',
+    stock: 150,
+    rating: 4.9,
+    numReviews: 2341,
+  },
+  {
+    name: 'The Psychology of Money',
+    description:
+      'Morgan Housel\'s timeless lessons on wealth, greed, and happiness. Understand how people think about money and make smarter financial decisions.',
+    price: 449,
+    category: 'Books',
+    image: 'https://images.unsplash.com/photo-1589998059171-988d887df646?w=500&auto=format',
+    stock: 120,
+    rating: 4.8,
+    numReviews: 1876,
+  },
+  {
+    name: 'Deep Work',
+    description:
+      'Cal Newport\'s guide to focused success in a distracted world. Rules for focused success in a distracted world — perfect for students and professionals.',
+    price: 399,
+    category: 'Books',
+    image: 'https://images.unsplash.com/photo-1512820790803-83ca734da794?w=500&auto=format',
+    stock: 95,
+    rating: 4.7,
+    numReviews: 943,
+  },
+  // More Electronics
+  {
+    name: '4K Action Camera',
+    description:
+      'Waterproof 4K action camera with image stabilization, wide-angle lens, and 2-inch touchscreen. Includes mounting accessories for sports and travel.',
+    price: 15999,
+    category: 'Electronics',
+    image: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500&auto=format',
+    stock: 35,
+    rating: 4.5,
+    numReviews: 412,
+  },
+  {
+    name: 'Noise Cancelling Earbuds',
+    description:
+      'True wireless earbuds with ANC, 8-hour battery (32hr with case), IPX5 water resistance, and multipoint connection. Crystal-clear call quality.',
+    price: 8499,
+    category: 'Electronics',
+    image: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=500&auto=format',
+    stock: 80,
+    rating: 4.6,
+    numReviews: 567,
+  },
+  // Fashion
+  {
+    name: 'Classic Denim Jacket',
+    description:
+      'Vintage-washed 100% cotton denim jacket with chest pockets and adjustable waistband. A timeless wardrobe staple for all seasons.',
+    price: 2999,
+    category: 'Fashion',
+    image: 'https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500&auto=format',
+    stock: 55,
+    rating: 4.4,
+    numReviews: 234,
+  },
+  // Home & Living
+  {
+    name: 'Bamboo Cutting Board Set',
+    description:
+      'Set of 3 organic bamboo cutting boards with juice grooves and non-slip feet. Naturally antibacterial, eco-friendly, and dishwasher safe.',
+    price: 1199,
+    category: 'Home & Living',
+    image: 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=500&auto=format',
+    stock: 70,
+    rating: 4.6,
+    numReviews: 389,
+  },
+  // Accessories
+  {
+    name: 'Smart Watch Band (Leather)',
+    description:
+      'Premium genuine leather watch band compatible with Apple Watch and Samsung Galaxy Watch. Soft, breathable, and adjustable for all wrist sizes.',
+    price: 799,
+    category: 'Accessories',
+    image: 'https://images.unsplash.com/photo-1551816230-ef5deaed4a26?w=500&auto=format',
+    stock: 110,
+    rating: 4.3,
+    numReviews: 178,
+  },
 ];
 
 const seedDB = async () => {

@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 import API from '../api';
 import ProductCard from '../components/ProductCard';
 
-const categories = ['Electronics', 'Fashion', 'Home & Living', 'Sports', 'Accessories'];
+const categories = ['Electronics', 'Fashion', 'Home & Living', 'Sports', 'Accessories', 'Books'];
 const sortOptions = [
   { value: 'newest', label: 'Newest First' },
   { value: 'price_asc', label: 'Price: Low → High' },
