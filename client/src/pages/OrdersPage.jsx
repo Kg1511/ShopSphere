@@ -72,7 +72,7 @@ export default function OrdersPage() {
                   {order.status}
                 </span>
                 <div style={{ fontWeight: 700, fontSize: '1.1rem', marginTop: '4px', color: 'var(--accent-primary)' }}>
-                  ${order.totalPrice.toFixed(2)}
+                  ₹{order.totalPrice.toFixed(0)}
                 </div>
               </div>
             </div>
@@ -86,11 +86,11 @@ export default function OrdersPage() {
                   <div style={{ flex: 1 }}>
                     <div style={{ fontWeight: 600 }}>{item.name}</div>
                     <div style={{ fontSize: '0.85rem', color: 'var(--text-tertiary)' }}>
-                      Qty: {item.quantity} × ${item.price.toFixed(2)}
+                      Qty: {item.quantity} × ₹{item.price.toFixed(0)}
                     </div>
                   </div>
                   <div style={{ fontWeight: 600, color: 'var(--text-secondary)' }}>
-                    ${(item.price * item.quantity).toFixed(2)}
+                    ₹{(item.price * item.quantity).toFixed(0)}
                   </div>
                 </div>
               ))}

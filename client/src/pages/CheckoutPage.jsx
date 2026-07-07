@@ -17,8 +17,8 @@ export default function CheckoutPage() {
   const [country, setCountry] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const shipping = totalPrice > 100 ? 0 : 9.99;
-  const tax = totalPrice * 0.08;
+  const shipping = totalPrice > 5000 ? 0 : 99;
+  const tax = totalPrice * 0.18;
   const orderTotal = totalPrice + shipping + tax;
 
   if (items.length === 0) {
@@ -133,7 +133,7 @@ export default function CheckoutPage() {
                     </div>
                   </div>
                   <div style={{ fontWeight: 700, color: 'var(--accent-primary)' }}>
-                    ${(item.price * item.quantity).toFixed(2)}
+                    ₹{(item.price * item.quantity).toFixed(0)}
                   </div>
                 </div>
               ))}
@@ -144,21 +144,21 @@ export default function CheckoutPage() {
             <h3>Payment Summary</h3>
             <div className="summary-row">
               <span>Subtotal</span>
-              <span>${totalPrice.toFixed(2)}</span>
+              <span>₹{totalPrice.toFixed(0)}</span>
             </div>
             <div className="summary-row">
               <span>Shipping</span>
               <span style={{ color: shipping === 0 ? 'var(--accent-secondary)' : 'inherit' }}>
-                {shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}
+                {shipping === 0 ? 'FREE' : `₹${shipping.toFixed(0)}`}
               </span>
             </div>
             <div className="summary-row">
-              <span>Tax (8%)</span>
-              <span>${tax.toFixed(2)}</span>
+              <span>GST (18%)</span>
+              <span>₹{tax.toFixed(0)}</span>
             </div>
             <div className="summary-total">
               <span>Total</span>
-              <span>${orderTotal.toFixed(2)}</span>
+              <span>₹{orderTotal.toFixed(0)}</span>
             </div>
             <button
               type="submit"
@@ -167,7 +167,7 @@ export default function CheckoutPage() {
               disabled={loading}
               id="place-order-btn"
             >
-              {loading ? 'Placing Order...' : `Place Order — $${orderTotal.toFixed(2)}`}
+              {loading ? 'Placing Order...' : `Place Order — ₹${orderTotal.toFixed(0)}`}
             </button>
             <p style={{ textAlign: 'center', fontSize: '0.75rem', color: 'var(--text-tertiary)', marginTop: 'var(--space-md)' }}>
               🔒 Your payment info is secure

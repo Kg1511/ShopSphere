@@ -136,7 +136,7 @@ export default function HomePage() {
             <div className="category-card" style={{ cursor: 'default' }}>
               <div className="category-icon">🚚</div>
               <h3>Free Shipping</h3>
-              <p>On orders over $100</p>
+              <p>On orders over ₹5,000</p>
             </div>
             <div className="category-card" style={{ cursor: 'default' }}>
               <div className="category-icon">🔒</div>

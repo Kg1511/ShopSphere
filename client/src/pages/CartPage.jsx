@@ -19,8 +19,8 @@ export default function CartPage() {
     );
   }
 
-  const shipping = totalPrice > 100 ? 0 : 9.99;
-  const tax = totalPrice * 0.08;
+  const shipping = totalPrice > 5000 ? 0 : 99;
+  const tax = totalPrice * 0.18;
   const orderTotal = totalPrice + shipping + tax;
 
   return (
@@ -38,7 +38,7 @@ export default function CartPage() {
                 <Link to={`/products/${item._id}`} className="cart-item-name">
                   {item.name}
                 </Link>
-                <div className="cart-item-price">${item.price.toFixed(2)}</div>
+                <div className="cart-item-price">₹{item.price.toFixed(0)}</div>
                 <div className="cart-item-actions">
                   <div className="quantity-selector">
                     <button
@@ -64,7 +64,7 @@ export default function CartPage() {
                 </div>
               </div>
               <div style={{ textAlign: 'right', fontWeight: 700, fontSize: '1.1rem', color: 'var(--accent-primary)' }}>
-                ${(item.price * item.quantity).toFixed(2)}
+                ₹{(item.price * item.quantity).toFixed(0)}
               </div>
             </div>
           ))}
@@ -74,25 +74,25 @@ export default function CartPage() {
           <h3>Order Summary</h3>
           <div className="summary-row">
             <span>Subtotal ({items.reduce((s, i) => s + i.quantity, 0)} items)</span>
-            <span>${totalPrice.toFixed(2)}</span>
+            <span>₹{totalPrice.toFixed(0)}</span>
           </div>
           <div className="summary-row">
             <span>Shipping</span>
             <span style={{ color: shipping === 0 ? 'var(--accent-secondary)' : 'inherit' }}>
-              {shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`}
+              {shipping === 0 ? 'FREE' : `₹${shipping.toFixed(0)}`}
             </span>
           </div>
           <div className="summary-row">
             <span>Tax (8%)</span>
-            <span>${tax.toFixed(2)}</span>
+            <span>₹{tax.toFixed(0)}</span>
           </div>
           <div className="summary-total">
             <span>Total</span>
-            <span>${orderTotal.toFixed(2)}</span>
+            <span>₹{orderTotal.toFixed(0)}</span>
           </div>
           {shipping > 0 && (
             <p style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)', marginBottom: 'var(--space-md)' }}>
-              Add ${(100 - totalPrice).toFixed(2)} more for free shipping!
+              Add ₹{(5000 - totalPrice).toFixed(0)} more for free shipping!
             </p>
           )}
           <Link to="/checkout" className="btn btn-primary btn-lg" style={{ width: '100%' }} id="checkout-btn">

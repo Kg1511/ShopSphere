@@ -160,7 +160,7 @@ export default function AdminDashboard() {
                 </select>
               </div>
               <div className="input-group">
-                <label>Price ($)</label>
+                <label>Price (₹)</label>
                 <input
                   type="number"
                   name="price"
@@ -259,7 +259,7 @@ export default function AdminDashboard() {
                   <td>
                     <span className="badge badge-accent">{product.category}</span>
                   </td>
-                  <td style={{ fontWeight: 600 }}>${product.price.toFixed(2)}</td>
+                  <td style={{ fontWeight: 600 }}>₹{product.price.toFixed(0)}</td>
                   <td>
                     <span
                       className={`badge ${product.stock > 10 ? 'badge-success' : product.stock > 0 ? 'badge-warning' : 'badge-danger'}`}

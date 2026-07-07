@@ -39,7 +39,7 @@ export default function ProductCard({ product }) {
             ({product.numReviews})
           </span>
         </div>
-        <div className="product-card-price">${product.price.toFixed(2)}</div>
+        <div className="product-card-price">₹{product.price.toFixed(0)}</div>
         <button className="btn btn-primary" onClick={handleAddToCart} id={`add-cart-${product._id}`}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
             <circle cx="9" cy="21" r="1" />
