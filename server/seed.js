@@ -133,7 +133,7 @@ const products = [
       'Set of 4 hand-poured soy wax candles in premium scents: Sandalwood, Lavender, Vanilla Bean, and Ocean Breeze. 60+ hours burn time each.',
     price: 1299,
     category: 'Home & Living',
-    image: 'https://images.unsplash.com/photo-1603905485916-49c4d4adbc49?w=500&auto=format',
+    image: 'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=500&auto=format',
     stock: 40,
     rating: 4.9,
     numReviews: 95,
