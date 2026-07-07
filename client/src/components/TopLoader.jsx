@@ -1,26 +1,39 @@
-import { useEffect, useState } from 'react';
-import { useNavigation } from 'react-router-dom';
+import { useEffect, useRef, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function TopLoader() {
-  const navigation = useNavigation();
+  const location = useLocation();
   const [width, setWidth] = useState(0);
   const [visible, setVisible] = useState(false);
+  const prevPath = useRef(location.pathname + location.search);
+  const timers = useRef([]);
+
+  const clearTimers = () => timers.current.forEach(clearTimeout);
 
   useEffect(() => {
-    if (navigation.state === 'loading') {
-      setVisible(true);
-      setWidth(0);
-      // Animate to 85% — we'll jump to 100% when done
-      const t1 = setTimeout(() => setWidth(30), 50);
-      const t2 = setTimeout(() => setWidth(60), 300);
-      const t3 = setTimeout(() => setWidth(85), 700);
-      return () => { clearTimeout(t1); clearTimeout(t2); clearTimeout(t3); };
-    } else if (navigation.state === 'idle' && visible) {
-      setWidth(100);
-      const t = setTimeout(() => { setVisible(false); setWidth(0); }, 400);
-      return () => clearTimeout(t);
-    }
-  }, [navigation.state]);
+    const currentPath = location.pathname + location.search;
+    if (currentPath === prevPath.current) return;
+    prevPath.current = currentPath;
+
+    // Start loader
+    clearTimers();
+    setVisible(true);
+    setWidth(0);
+
+    timers.current = [
+      setTimeout(() => setWidth(30), 50),
+      setTimeout(() => setWidth(65), 250),
+      setTimeout(() => setWidth(85), 600),
+      setTimeout(() => {
+        setWidth(100);
+        timers.current.push(
+          setTimeout(() => { setVisible(false); setWidth(0); }, 350)
+        );
+      }, 900),
+    ];
+
+    return clearTimers;
+  }, [location.pathname, location.search]);
 
   if (!visible) return null;
 
