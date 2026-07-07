@@ -9,7 +9,6 @@ const categories = [
   { name: 'Home & Living', icon: '🏠', desc: 'Décor & Comfort' },
   { name: 'Sports', icon: '🏆', desc: 'Gear & Fitness' },
   { name: 'Accessories', icon: '⌚', desc: 'Watches & More' },
-  { name: 'Books', icon: '📚', desc: 'Read & Learn' },
 ];
 
 export default function HomePage() {
