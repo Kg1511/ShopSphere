@@ -2,10 +2,14 @@
 
 A full-stack e-commerce platform built with **MongoDB, Express.js, React, and Node.js** featuring JWT-based authentication, product catalog management, dynamic cart logic, and a premium dark-themed UI.
 
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Vercel-black?style=flat-square&logo=vercel)](https://shop-sphere-three-pi.vercel.app)
+[![API](https://img.shields.io/badge/API-Render-46E3B7?style=flat-square&logo=render)](https://shopsphere-api-ld2e.onrender.com/api/health)
 ![MERN Stack](https://img.shields.io/badge/Stack-MERN-61DAFB?style=flat-square&logo=react)
 ![Node.js](https://img.shields.io/badge/Node.js-22.x-339933?style=flat-square&logo=node.js)
-![MongoDB](https://img.shields.io/badge/MongoDB-8.x-47A248?style=flat-square&logo=mongodb)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=flat-square&logo=mongodb)
 ![License](https://img.shields.io/badge/License-ISC-blue?style=flat-square)
+
+> 🌐 **Live at:** https://shop-sphere-three-pi.vercel.app
 
 ---
 
@@ -102,7 +106,7 @@ ShopSphere/
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/Kg1511/ShopSphere.git
 cd ShopSphere
 ```
 
@@ -116,12 +120,22 @@ cd ../client && npm install
 
 ### 3. Configure Environment
 
-Create `server/.env` file:
+Create `server/.env` from the example:
+
+```bash
+cp server/.env.example server/.env
+```
+
+Then fill in your values:
 
 ```env
+# Local development
 MONGO_URI=mongodb://localhost:27017/shopsphere
 JWT_SECRET=your_secret_key_here
 PORT=5000
+
+# Optional: set when deploying (see Deployment section)
+# CLIENT_URL=https://your-vercel-app.vercel.app
 ```
 
 ### 4. Seed the Database
@@ -215,6 +229,53 @@ main
     ├── Root package.json + README
     └── Final polish
 ```
+
+---
+
+## 🚢 Deployment
+
+ShopSphere is deployed across three free-tier services:
+
+| Service | Purpose | URL |
+|---------|---------|-----|
+| **Vercel** | React frontend | [shop-sphere-three-pi.vercel.app](https://shop-sphere-three-pi.vercel.app) |
+| **Render** | Express API | [shopsphere-api-ld2e.onrender.com](https://shopsphere-api-ld2e.onrender.com) |
+| **MongoDB Atlas** | Database (M0 Free) | Atlas cluster (cloud-hosted) |
+
+### Deploy Your Own
+
+#### Backend — Render
+1. Create a new **Web Service** on [render.com](https://render.com)
+2. Connect your GitHub repo, set **Root Directory** to `server`
+3. **Build command:** `npm install` · **Start command:** `node server.js`
+4. Add environment variables:
+   ```
+   MONGO_URI=<your-atlas-uri>
+   JWT_SECRET=<your-secret>
+   CLIENT_URL=<your-vercel-url>
+   NODE_ENV=production
+   PORT=5000
+   ```
+
+#### Frontend — Vercel
+1. Import repo on [vercel.com](https://vercel.com), set **Root Directory** to `client`
+2. Framework preset: **Vite** · Output: `dist`
+3. Add environment variable:
+   ```
+   VITE_API_URL=<your-render-url>/api
+   ```
+4. Deploy — SPA routing is handled by `client/vercel.json`
+
+#### Database — MongoDB Atlas
+1. Create a free **M0 cluster** at [mongodb.com/atlas](https://mongodb.com/atlas)
+2. Add `0.0.0.0/0` to Network Access (allows Render IPs)
+3. Grab the connection string and set it as `MONGO_URI` on Render
+4. Run the seed script locally (pointed at Atlas) to populate products:
+   ```bash
+   cd server && node seed.js
+   ```
+
+> ⚠️ **Note:** Render's free tier spins down after 15 min of inactivity. The first request after idle may take ~30s to wake up.
 
 ---
 
