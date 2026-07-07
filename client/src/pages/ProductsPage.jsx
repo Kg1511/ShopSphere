@@ -45,14 +45,14 @@ export default function ProductsPage() {
     const params = new URLSearchParams(searchParams);
     if (newCat) params.set('category', newCat);
     else params.delete('category');
-    setSearchParams(params);
+    setSearchParams(params, { replace: true });
   };
 
   const handleSortChange = (e) => {
     setSortBy(e.target.value);
     const params = new URLSearchParams(searchParams);
     params.set('sort', e.target.value);
-    setSearchParams(params);
+    setSearchParams(params, { replace: true });
   };
 
   return (
