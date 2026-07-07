@@ -1667,3 +1667,205 @@ ul, ol {
     font-size: 1.4rem;
   }
 }
+
+/* ========================= */
+/* Top Navigation Loader      */
+/* ========================= */
+.top-loader-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 9999;
+  background: transparent;
+}
+
+.top-loader-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #6c63ff, #00d4aa, #ff6b9d);
+  background-size: 200% 100%;
+  animation: loaderShift 1.2s linear infinite;
+  transition: width 0.3s ease;
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 0 12px rgba(108, 99, 255, 0.7);
+}
+
+@keyframes loaderShift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* ========================= */
+/* Page Fade-In Transition    */
+/* ========================= */
+.page-content {
+  animation: pageFadeIn 0.3s ease both;
+}
+
+@keyframes pageFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ========================= */
+/* Skeleton Cards             */
+/* ========================= */
+.skeleton-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.skeleton-image {
+  height: 220px;
+  width: 100%;
+}
+
+.skeleton-body {
+  padding: var(--space-lg);
+}
+
+.skeleton-line {
+  border-radius: var(--radius-sm);
+  display: block;
+}
+
+.skeleton-btn {
+  height: 42px;
+  border-radius: var(--radius-md);
+  margin-top: var(--space-md);
+  width: 100%;
+}
+
+@keyframes shimmer {
+  0%   { background-position: -600px 0; }
+  100% { background-position: 600px 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--bg-tertiary) 25%,
+    rgba(255,255,255,0.04) 50%,
+    var(--bg-tertiary) 75%
+  );
+  background-size: 600px 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+/* ========================= */
+/* Enhanced Product Card      */
+/* ========================= */
+.product-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  position: relative;
+  animation: cardEntrance 0.5s ease both;
+}
+
+@keyframes cardEntrance {
+  from { opacity: 0; transform: translateY(24px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.01);
+  border-color: rgba(108, 99, 255, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(108, 99, 255, 0.15);
+}
+
+/* Wishlist button */
+.product-wish-btn {
+  position: absolute;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  z-index: 2;
+  transform: scale(0);
+  opacity: 0;
+}
+
+.product-card:hover .product-wish-btn {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.product-wish-btn.wished,
+.product-wish-btn:hover {
+  color: #ff6b9d;
+  border-color: rgba(255, 107, 157, 0.4);
+  background: rgba(255, 107, 157, 0.15);
+  transform: scale(1.1) !important;
+}
+
+/* Hover overlay */
+.product-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(108,99,255,0.85) 0%, transparent 100%);
+  padding: var(--space-md) var(--space-md) var(--space-sm);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all var(--transition-base);
+  pointer-events: none;
+}
+
+.product-card:hover .product-card-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card-overlay span {
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Add to Cart button spinner */
+.product-add-btn {
+  width: 100%;
+  margin-top: var(--space-md);
+  position: relative;
+}
+
+.product-add-btn.adding {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.btn-spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

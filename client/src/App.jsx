@@ -4,6 +4,7 @@ import { CartProvider } from './context/CartContext';
 import { ToastProvider } from './context/ToastContext';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import TopLoader from './components/TopLoader';
 import ProtectedRoute from './components/ProtectedRoute';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
@@ -21,9 +22,10 @@ function App() {
       <AuthProvider>
         <CartProvider>
           <ToastProvider>
+            <TopLoader />
             <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
               <Navbar />
-              <main style={{ flex: 1 }}>
+              <main style={{ flex: 1 }} className="page-content">
                 <Routes>
                   <Route path="/" element={<HomePage />} />
                   <Route path="/products" element={<ProductsPage />} />

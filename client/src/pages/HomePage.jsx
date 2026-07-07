@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import API from '../api';
 import ProductCard from '../components/ProductCard';
+import SkeletonCard from '../components/SkeletonCard';
 
 const categories = [
   { name: 'Electronics', icon: '⚡', desc: 'Gadgets & Tech' },
@@ -179,13 +180,13 @@ export default function HomePage() {
             <p>Our highest-rated products, loved by thousands of customers</p>
           </div>
           {loading ? (
-            <div className="loading">
-              <div className="spinner" />
+            <div className="products-grid">
+              {Array.from({ length: 4 }).map((_, i) => <SkeletonCard key={i} />)}
             </div>
           ) : (
             <div className="products-grid">
-              {featured.map((product) => (
-                <ProductCard key={product._id} product={product} />
+              {featured.map((product, i) => (
+                <ProductCard key={product._id} product={product} index={i} />
               ))}
             </div>
           )}

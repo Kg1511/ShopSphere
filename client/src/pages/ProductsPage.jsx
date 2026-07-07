@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import API from '../api';
 import ProductCard from '../components/ProductCard';
+import SkeletonCard from '../components/SkeletonCard';
 
 const categories = ['Electronics', 'Fashion', 'Home & Living', 'Sports', 'Accessories', 'Books'];
 const sortOptions = [
@@ -109,8 +110,8 @@ export default function ProductsPage() {
         {/* Products Grid */}
         <div>
           {loading ? (
-            <div className="loading">
-              <div className="spinner" />
+            <div className="products-grid">
+              {Array.from({ length: 8 }).map((_, i) => <SkeletonCard key={i} />)}
             </div>
           ) : products.length === 0 ? (
             <div className="empty-state">
@@ -124,8 +125,8 @@ export default function ProductsPage() {
                 Showing {products.length} product{products.length !== 1 ? 's' : ''}
               </p>
               <div className="products-grid">
-                {products.map((product) => (
-                  <ProductCard key={product._id} product={product} />
+                {products.map((product, i) => (
+                  <ProductCard key={product._id} product={product} index={i} />
                 ))}
               </div>
             </>
