@@ -36,7 +36,7 @@ export default function Footer() {
           <div>
             <h4>Company</h4>
             <ul className="footer-links">
-              <li><a href="#">About Us</a></li>
+              <li><Link to="/about">About Us</Link></li>
               <li><a href="#">Contact</a></li>
               <li><a href="#">Privacy Policy</a></li>
               <li><a href="#">Terms of Service</a></li>
