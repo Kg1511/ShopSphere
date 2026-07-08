@@ -107,44 +107,78 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="hero" id="hero-section">
         <div className="container">
-          <div className="hero-content">
-            <div className="hero-badge">
-              ✨ Premium Shopping Experience
-            </div>
-            <h1>
-              Discover Your<br />
-              <span className="gradient-text">Perfect Style</span>
-            </h1>
-            <p>
-              Explore curated collections of premium products. From cutting-edge
-              electronics to timeless fashion — everything you need, all in one place.
-            </p>
-            <div className="hero-actions">
-              <Link to="/products" className="btn btn-primary btn-lg" id="hero-shop-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <rect x="3" y="3" width="7" height="7" rx="1" />
-                  <rect x="14" y="3" width="7" height="7" rx="1" />
-                  <rect x="3" y="14" width="7" height="7" rx="1" />
-                  <rect x="14" y="14" width="7" height="7" rx="1" />
-                </svg>
-                Shop Now
-              </Link>
-              <Link to="/products" className="btn btn-secondary btn-lg">
-                Browse Catalog →
-              </Link>
-            </div>
-            <div className="hero-stats">
-              <div className="hero-stat">
-                <h3>500+</h3>
-                <p>Premium Products</p>
+          <div className="hero-grid">
+            <div className="hero-content">
+              <div className="hero-badge">
+                ✨ Premium Shopping Experience
               </div>
-              <div className="hero-stat">
-                <h3>50K+</h3>
-                <p>Happy Customers</p>
+              <h1>
+                Discover Your<br />
+                <span className="gradient-text">Perfect Style</span>
+              </h1>
+              <p>
+                Explore curated collections of premium products. From cutting-edge
+                electronics to timeless fashion — everything you need, all in one place.
+              </p>
+              <div className="hero-actions">
+                <Link to="/products" className="btn btn-primary btn-lg" id="hero-shop-btn">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                    <rect x="3" y="3" width="7" height="7" rx="1" />
+                    <rect x="14" y="3" width="7" height="7" rx="1" />
+                    <rect x="3" y="14" width="7" height="7" rx="1" />
+                    <rect x="14" y="14" width="7" height="7" rx="1" />
+                  </svg>
+                  Shop Now
+                </Link>
+                <Link to="/products" className="btn btn-secondary btn-lg">
+                  Browse Catalog →
+                </Link>
               </div>
-              <div className="hero-stat">
-                <h3>4.9★</h3>
-                <p>Average Rating</p>
+              <div className="hero-stats">
+                <div className="hero-stat">
+                  <h3>500+</h3>
+                  <p>Premium Products</p>
+                </div>
+                <div className="hero-stat">
+                  <h3>50K+</h3>
+                  <p>Happy Customers</p>
+                </div>
+                <div className="hero-stat">
+                  <h3>4.9★</h3>
+                  <p>Average Rating</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero-visual">
+              <div className="glow-orb-container">
+                <div className="orbit-ring ring-1"></div>
+                <div className="orbit-ring ring-2"></div>
+                <div className="glow-orb"></div>
+              </div>
+
+              <div className="floating-card float-1">
+                <div className="badge-icon">🎧</div>
+                <div className="badge-content">
+                  <h4>Top Audio</h4>
+                  <p>Best sellers 2026</p>
+                </div>
+              </div>
+
+              <div className="floating-card float-2">
+                <div className="badge-icon">⭐</div>
+                <div className="badge-content">
+                  <h4>4.9/5 Rating</h4>
+                  <p>From 50k+ reviews</p>
+                </div>
+              </div>
+
+              <div className="floating-card float-3">
+                <div className="badge-icon">🚀</div>
+                <div className="badge-content">
+                  <h4>Free Shipping</h4>
+                  <p>On premium orders</p>
+                </div>
               </div>
             </div>
           </div>

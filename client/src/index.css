@@ -645,6 +645,161 @@ select.input-field option {
   }
 }
 
+/* Hero Visual Animation */
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--space-2xl);
+}
+
+@media (max-width: 900px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .hero-visual {
+    display: none !important;
+  }
+}
+
+.hero-visual {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeInUp 0.8s ease 0.5s both;
+}
+
+.floating-card {
+  position: absolute;
+  background: var(--bg-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  animation: floatCard ease-in-out infinite alternate;
+  z-index: 5;
+}
+
+.float-1 {
+  top: 10%;
+  right: 5%;
+  animation-duration: 4s;
+}
+
+.float-2 {
+  bottom: 15%;
+  left: 0;
+  animation-duration: 5s;
+  animation-delay: -2s;
+}
+
+.float-3 {
+  top: 40%;
+  right: 20%;
+  background: var(--accent-gradient);
+  border: none;
+  animation-duration: 4.5s;
+  animation-delay: -3s;
+  transform: scale(1.05);
+  box-shadow: var(--shadow-glow);
+}
+
+.float-3 p, .float-3 h4 {
+  color: white !important;
+}
+
+.float-3 .badge-icon {
+  background: rgba(255,255,255,0.2) !important;
+  color: white !important;
+}
+
+@keyframes floatCard {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-15px); }
+}
+
+.glow-orb-container {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glow-orb {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: var(--accent-gradient);
+  box-shadow: 0 0 60px 20px rgba(108, 99, 255, 0.3);
+  animation: pulseOrb 4s ease-in-out infinite alternate;
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes pulseOrb {
+  0% { transform: scale(1); box-shadow: 0 0 50px 10px rgba(108, 99, 255, 0.3); }
+  100% { transform: scale(1.1); box-shadow: 0 0 80px 25px rgba(0, 212, 170, 0.4); }
+}
+
+.orbit-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px dashed rgba(255,255,255,0.15);
+  animation: spinOrbit linear infinite;
+}
+
+.ring-1 {
+  width: 280px;
+  height: 280px;
+  animation-duration: 30s;
+}
+
+.ring-2 {
+  width: 380px;
+  height: 380px;
+  animation-duration: 45s;
+  animation-direction: reverse;
+  border-style: solid;
+  border-color: rgba(108, 99, 255, 0.1);
+}
+
+@keyframes spinOrbit {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.badge-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-tertiary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.badge-content h4 {
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+  font-weight: 600;
+}
+.badge-content p {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+  margin-bottom: 0;
+}
+
 /* ========================= */
 /* Product Grid               */
 /* ========================= */
