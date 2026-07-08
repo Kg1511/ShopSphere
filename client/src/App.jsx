@@ -15,6 +15,7 @@ import RegisterPage from './pages/RegisterPage';
 import CheckoutPage from './pages/CheckoutPage';
 import OrdersPage from './pages/OrdersPage';
 import AdminDashboard from './pages/AdminDashboard';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
               <main style={{ flex: 1 }} className="page-content">
                 <Routes>
                   <Route path="/" element={<HomePage />} />
+                  <Route path="/about" element={<AboutPage />} />
                   <Route path="/products" element={<ProductsPage />} />
                   <Route path="/products/:id" element={<ProductDetailPage />} />
                   <Route path="/cart" element={<CartPage />} />
