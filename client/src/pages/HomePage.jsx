@@ -1,16 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { 
+  Zap, Shirt, Home as HomeIcon, Trophy, Watch, BookOpen,
+  Headphones, Star, Rocket, Lock, RefreshCw, Truck, ShieldCheck, MessageCircle
+} from 'lucide-react';
 import API from '../api';
 import ProductCard from '../components/ProductCard';
 import SkeletonCard from '../components/SkeletonCard';
 
 const categories = [
-  { name: 'Electronics', icon: '⚡', desc: 'Gadgets & Tech' },
-  { name: 'Fashion', icon: '👔', desc: 'Style & Trends' },
-  { name: 'Home & Living', icon: '🏠', desc: 'Décor & Comfort' },
-  { name: 'Sports', icon: '🏆', desc: 'Gear & Fitness' },
-  { name: 'Accessories', icon: '⌚', desc: 'Watches & More' },
-  { name: 'Books', icon: '📚', desc: 'Read & Learn' },
+  { name: 'Electronics', icon: <Zap size={32} />, desc: 'Gadgets & Tech' },
+  { name: 'Fashion', icon: <Shirt size={32} />, desc: 'Style & Trends' },
+  { name: 'Home & Living', icon: <HomeIcon size={32} />, desc: 'Décor & Comfort' },
+  { name: 'Sports', icon: <Trophy size={32} />, desc: 'Gear & Fitness' },
+  { name: 'Accessories', icon: <Watch size={32} />, desc: 'Watches & More' },
+  { name: 'Books', icon: <BookOpen size={32} />, desc: 'Read & Learn' },
 ];
 
 const testimonials = [
@@ -18,7 +22,7 @@ const testimonials = [
     id: 1,
     name: 'Priya Sharma',
     location: 'Mumbai',
-    avatar: '👩🏽',
+    avatar: 'PS',
     rating: 5,
     review: 'Absolutely love ShopSphere! The noise-cancelling headphones I ordered arrived in perfect condition. The quality exceeded my expectations and the checkout was so smooth.',
     product: 'Wireless Headphones',
@@ -27,7 +31,7 @@ const testimonials = [
     id: 2,
     name: 'Arjun Mehta',
     location: 'Bangalore',
-    avatar: '👨🏽',
+    avatar: 'AM',
     rating: 5,
     review: 'Best online shopping experience I have had. The Smart Fitness Watch is exactly as described — incredible build quality and the delivery was super fast!',
     product: 'Smart Fitness Watch',
@@ -36,7 +40,7 @@ const testimonials = [
     id: 3,
     name: 'Sneha Reddy',
     location: 'Hyderabad',
-    avatar: '👩🏾',
+    avatar: 'SR',
     rating: 5,
     review: 'The premium leather jacket fits perfectly and the quality is top-notch. Customer support was very helpful when I had a size query. Will definitely shop again!',
     product: 'Premium Leather Jacket',
@@ -45,7 +49,7 @@ const testimonials = [
     id: 4,
     name: 'Rahul Gupta',
     location: 'Delhi',
-    avatar: '👨🏻',
+    avatar: 'RG',
     rating: 5,
     review: 'Bought the 4K Laptop and the Mechanical Keyboard together. Both are outstanding products. Fast shipping, great packaging, and the prices are unbeatable.',
     product: 'Ultra-Slim 4K Laptop',
@@ -54,7 +58,7 @@ const testimonials = [
     id: 5,
     name: 'Kavya Nair',
     location: 'Kochi',
-    avatar: '👩🏼',
+    avatar: 'KN',
     rating: 5,
     review: 'ShopSphere is my go-to store now. Got the Bamboo Cutting Board Set and the candle collection — perfect gifts for my family. Packaging was gorgeous!',
     product: 'Home & Living Collection',
@@ -158,7 +162,7 @@ export default function HomePage() {
               </div>
 
               <div className="floating-card float-1">
-                <div className="badge-icon">🎧</div>
+                <div className="badge-icon"><Headphones size={20} /></div>
                 <div className="badge-content">
                   <h4>Top Audio</h4>
                   <p>Best sellers 2026</p>
@@ -166,7 +170,7 @@ export default function HomePage() {
               </div>
 
               <div className="floating-card float-2">
-                <div className="badge-icon">⭐</div>
+                <div className="badge-icon"><Star size={20} /></div>
                 <div className="badge-content">
                   <h4>4.9/5 Rating</h4>
                   <p>From 50k+ reviews</p>
@@ -174,7 +178,7 @@ export default function HomePage() {
               </div>
 
               <div className="floating-card float-3">
-                <div className="badge-icon">🚀</div>
+                <div className="badge-icon"><Rocket size={20} /></div>
                 <div className="badge-content">
                   <h4>Free Shipping</h4>
                   <p>On premium orders</p>
@@ -182,7 +186,7 @@ export default function HomePage() {
               </div>
 
               <div className="floating-card float-4">
-                <div className="badge-icon">🔒</div>
+                <div className="badge-icon"><Lock size={20} /></div>
                 <div className="badge-content">
                   <h4>Secure Pay</h4>
                   <p>100% Protected</p>
@@ -190,7 +194,7 @@ export default function HomePage() {
               </div>
 
               <div className="floating-card float-5">
-                <div className="badge-icon">🔄</div>
+                <div className="badge-icon"><RefreshCw size={20} /></div>
                 <div className="badge-content">
                   <h4>Easy Returns</h4>
                   <p>30-day policy</p>
@@ -313,22 +317,22 @@ export default function HomePage() {
         <div className="container">
           <div className="categories-grid" style={{ textAlign: 'center' }}>
             <div className="category-card" style={{ cursor: 'default' }}>
-              <div className="category-icon">🚚</div>
+              <div className="category-icon" style={{ display: 'flex', justifyContent: 'center' }}><Truck size={40} color="var(--accent-primary)" /></div>
               <h3>Free Shipping</h3>
               <p>On orders over ₹5,000</p>
             </div>
             <div className="category-card" style={{ cursor: 'default' }}>
-              <div className="category-icon">🔒</div>
+              <div className="category-icon" style={{ display: 'flex', justifyContent: 'center' }}><ShieldCheck size={40} color="var(--accent-secondary)" /></div>
               <h3>Secure Payments</h3>
               <p>SSL encrypted checkout</p>
             </div>
             <div className="category-card" style={{ cursor: 'default' }}>
-              <div className="category-icon">🔄</div>
+              <div className="category-icon" style={{ display: 'flex', justifyContent: 'center' }}><RefreshCw size={40} color="var(--accent-blue)" /></div>
               <h3>Easy Returns</h3>
               <p>30-day return policy</p>
             </div>
             <div className="category-card" style={{ cursor: 'default' }}>
-              <div className="category-icon">💬</div>
+              <div className="category-icon" style={{ display: 'flex', justifyContent: 'center' }}><MessageCircle size={40} color="var(--accent-pink)" /></div>
               <h3>24/7 Support</h3>
               <p>Always here to help</p>
             </div>

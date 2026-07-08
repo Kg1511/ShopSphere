@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import { Search } from 'lucide-react';
 import API from '../api';
 import ProductCard from '../components/ProductCard';
 import SkeletonCard from '../components/SkeletonCard';
@@ -115,7 +116,7 @@ export default function ProductsPage() {
             </div>
           ) : products.length === 0 ? (
             <div className="empty-state">
-              <div className="empty-state-icon">🔍</div>
+              <div className="empty-state-icon"><Search size={48} color="var(--text-tertiary)" /></div>
               <h2>No products found</h2>
               <p>Try adjusting your filters or search terms</p>
             </div>
