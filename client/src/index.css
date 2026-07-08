@@ -269,6 +269,12 @@ ul, ol {
   color: var(--text-tertiary);
 }
 
+/* Fix option text visibility on light backgrounds */
+select.input-field option {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+}
+
 /* ========================= */
 /* Badges                     */
 /* ========================= */
@@ -1235,13 +1241,19 @@ ul, ol {
   gap: var(--space-2xl);
 }
 
-@media (max-width: 900px) {
-  .products-layout { grid-template-columns: 1fr; }
-}
-
 .filters-sidebar {
   position: sticky;
   top: 100px;
+  height: max-content;
+  z-index: 10;
+}
+
+@media (max-width: 900px) {
+  .products-layout { grid-template-columns: 1fr; }
+  .filters-sidebar {
+    position: static;
+    margin-bottom: var(--space-lg);
+  }
 }
 
 .filter-group {
