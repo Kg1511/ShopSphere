@@ -1463,13 +1463,27 @@ select.input-field option {
   transition: color var(--transition-fast);
 }
 
-.filter-option:hover, .filter-option.active {
+.filter-option:hover {
   color: var(--text-primary);
 }
 
-.filter-option input[type="checkbox"],
-.filter-option input[type="radio"] {
-  accent-color: var(--accent-primary);
+.filter-option.active {
+  color: var(--accent-primary);
+  font-weight: 600;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.filter-option.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-primary);
 }
 
 /* ========================= */

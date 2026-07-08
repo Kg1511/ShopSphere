@@ -17,9 +17,10 @@ export default function ProductsPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [activeCategory, setActiveCategory] = useState(searchParams.get('category') || '');
-  const [sortBy, setSortBy] = useState(searchParams.get('sort') || 'newest');
-  const [searchTerm, setSearchTerm] = useState(searchParams.get('search') || '');
+  
+  const activeCategory = searchParams.get('category') || '';
+  const sortBy = searchParams.get('sort') || 'newest';
+  const searchTerm = searchParams.get('search') || '';
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -43,7 +44,6 @@ export default function ProductsPage() {
 
   const handleCategoryChange = (cat) => {
     const newCat = activeCategory === cat ? '' : cat;
-    setActiveCategory(newCat);
     const params = new URLSearchParams(searchParams);
     if (newCat) params.set('category', newCat);
     else params.delete('category');
@@ -51,7 +51,6 @@ export default function ProductsPage() {
   };
 
   const handleSortChange = (e) => {
-    setSortBy(e.target.value);
     const params = new URLSearchParams(searchParams);
     params.set('sort', e.target.value);
     setSearchParams(params, { replace: true });
@@ -70,15 +69,13 @@ export default function ProductsPage() {
           <div className="filter-group">
             <h3>Categories</h3>
             {categories.map((cat) => (
-              <label key={cat} className={`filter-option ${activeCategory === cat ? 'active' : ''}`}>
-                <input
-                  type="radio"
-                  name="category"
-                  checked={activeCategory === cat}
-                  onChange={() => handleCategoryChange(cat)}
-                />
+              <div 
+                key={cat} 
+                className={`filter-option ${activeCategory === cat ? 'active' : ''}`}
+                onClick={() => handleCategoryChange(cat)}
+              >
                 {cat}
-              </label>
+              </div>
             ))}
             {activeCategory && (
               <button
