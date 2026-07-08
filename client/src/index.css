@@ -2172,12 +2172,10 @@ select.input-field option {
 }
 
 .profile-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xl);
-  padding: var(--space-2xl);
+  background: transparent;
+  border: none;
+  padding: var(--space-xl);
   text-align: center;
-  box-shadow: var(--shadow-lg);
   position: relative;
   z-index: 5;
   width: 100%;
@@ -2215,14 +2213,14 @@ select.input-field option {
   filter: drop-shadow(0 10px 15px rgba(108, 99, 255, 0.4));
 }
 
-.float-1 { top: 10%; left: 20%; animation-delay: 0s; }
-.float-2 { top: 20%; right: 15%; animation-delay: -2s; }
-.float-3 { bottom: 15%; left: 15%; animation-delay: -4s; }
-.float-4 { bottom: 25%; right: 10%; animation-delay: -6s; }
-.float-5 { top: 5%; left: 50%; animation-delay: -1s; }
-.float-6 { bottom: 5%; right: 40%; animation-delay: -3s; }
-.float-7 { top: 50%; left: 5%; animation-delay: -5s; }
-.float-8 { top: 65%; right: 5%; animation-delay: -7s; }
+.float-1 { top: 10%; left: 5%; animation-delay: 0s; }
+.float-2 { top: 15%; right: 5%; animation-delay: -2s; }
+.float-3 { bottom: 15%; left: 5%; animation-delay: -4s; }
+.float-4 { bottom: 20%; right: 5%; animation-delay: -6s; }
+.float-5 { top: 5%; left: 45%; animation-delay: -1s; }
+.float-6 { bottom: 5%; right: 45%; animation-delay: -3s; }
+.float-7 { top: 45%; left: 2%; animation-delay: -5s; }
+.float-8 { top: 55%; right: 2%; animation-delay: -7s; }
 
 @keyframes float-orbit {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
