@@ -1419,7 +1419,7 @@ select.input-field option {
 .products-layout {
   display: grid;
   grid-template-columns: 260px 1fr;
-  gap: var(--space-2xl);
+  gap: var(--space-xl);
 }
 
 .filters-sidebar {
@@ -1443,6 +1443,22 @@ select.input-field option {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-md);
+}
+
+.products-header {
+  background: linear-gradient(135deg, var(--bg-card) 0%, rgba(108, 99, 255, 0.05) 100%);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent-primary);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  margin-bottom: var(--space-2xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.search-subtitle {
+  color: var(--text-tertiary);
+  font-size: 1.1rem;
+  margin-top: var(--space-sm);
 }
 
 .filter-group h3 {

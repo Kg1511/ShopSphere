@@ -58,10 +58,12 @@ export default function ProductsPage() {
 
   return (
     <div className="container section">
-      <h1 className="page-title">
-        {activeCategory || 'All Products'}
-        {searchTerm && <span style={{ color: 'var(--text-tertiary)', fontSize: '1rem', fontWeight: 400 }}> — results for "{searchTerm}"</span>}
-      </h1>
+      <div className="products-header">
+        <h1 className="page-title" style={{ marginBottom: 0 }}>
+          {activeCategory || 'All Products'}
+        </h1>
+        {searchTerm && <p className="search-subtitle">Results for "{searchTerm}"</p>}
+      </div>
 
       <div className="products-layout">
         {/* Filters Sidebar */}
@@ -119,7 +121,7 @@ export default function ProductsPage() {
             </div>
           ) : (
             <>
-              <p style={{ color: 'var(--text-tertiary)', marginBottom: 'var(--space-lg)', fontSize: '0.9rem' }}>
+              <p style={{ color: 'var(--text-tertiary)', marginBottom: 'var(--space-sm)', fontSize: '0.9rem' }}>
                 Showing {products.length} product{products.length !== 1 ? 's' : ''}
               </p>
               <div className="products-grid">
