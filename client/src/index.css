@@ -2201,11 +2201,6 @@ select.input-field option {
 
 .floating-icon {
   position: absolute;
-  background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-md);
-  padding: 1rem;
-  box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2215,10 +2210,9 @@ select.input-field option {
 }
 
 .floating-icon:hover {
-  transform: scale(1.1) translateY(-5px) !important;
-  box-shadow: var(--shadow-lg);
+  transform: scale(1.2) translateY(-5px) !important;
   z-index: 10;
-  border-color: var(--accent-primary);
+  filter: drop-shadow(0 10px 15px rgba(108, 99, 255, 0.4));
 }
 
 .float-1 { top: 10%; left: 20%; animation-delay: 0s; }
