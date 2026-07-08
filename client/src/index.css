@@ -731,8 +731,8 @@ select.input-field option {
 }
 
 .float-4 {
-  bottom: 25%;
-  right: -5%;
+  bottom: 5%;
+  right: 10%;
   animation-duration: 5.5s;
   animation-delay: -1s;
 }
