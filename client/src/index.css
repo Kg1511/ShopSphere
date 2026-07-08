@@ -2141,8 +2141,8 @@ select.input-field option {
 /* ========================= */
 .about-hero {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-2xl);
+  grid-template-columns: 1fr 520px;
+  gap: 4rem;
   align-items: center;
   min-height: 70vh;
   opacity: 0;
