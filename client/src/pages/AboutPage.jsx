@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, Code2, Database, Layout, Sparkles } from 'lucide-react';
+import { Mail, Code2, Database, Layout, Sparkles } from 'lucide-react';
 
 export default function AboutPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,10 +29,10 @@ export default function AboutPage() {
           
           <div className="social-links" style={{ display: 'flex', gap: '1rem' }}>
             <a href="#" className="nav-link social-link" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)' }} title="GitHub">
-              <Github size={20} />
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.24c3-.34 6-1.5 6-6.76 0-1.5-.5-2.7-1.3-3.7.13-.3.57-1.7-.13-3.6 0 0-1-.3-3.3 1.2-1-.3-2.1-.4-3.1-.4s-2.1.1-3.1.4c-2.3-1.5-3.3-1.2-3.3-1.2-.7 1.9-.2 3.3-.1 3.6-1 .9-1.5 2.2-1.5 3.7 0 5.2 3 6.4 6 6.76A4.8 4.8 0 0 0 8 18v4"/><path d="M4 19c-2-1-2-4-5-4"/></svg>
             </a>
             <a href="#" className="nav-link social-link" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)' }} title="LinkedIn">
-              <Linkedin size={20} />
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
             </a>
             <a href="#" className="nav-link social-link" style={{ background: 'var(--bg-card)', border: '1px solid var(--border-subtle)' }} title="Email">
               <Mail size={20} />
