@@ -2173,10 +2173,18 @@ select.input-field option {
 
 .profile-card {
   background: var(--bg-card);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-lg);
+  border: none;
+  border-radius: var(--radius-xl);
   padding: var(--space-xl);
   text-align: center;
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 380px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .profile-avatar {
@@ -2206,7 +2214,8 @@ select.input-field option {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  animation: planet-orbit 20s linear infinite;
+  animation: planet-orbit var(--orbit-speed, 20s) linear infinite;
+  animation-delay: var(--orbit-delay, 0s);
   transition: all 0.3s ease;
 }
 
@@ -2216,18 +2225,18 @@ select.input-field option {
   animation-play-state: paused;
 }
 
-.about-float-1 { animation-delay: 0s; }
-.about-float-2 { animation-delay: -2.5s; }
-.about-float-3 { animation-delay: -5s; }
-.about-float-4 { animation-delay: -7.5s; }
-.about-float-5 { animation-delay: -10s; }
-.about-float-6 { animation-delay: -12.5s; }
-.about-float-7 { animation-delay: -15s; }
-.about-float-8 { animation-delay: -17.5s; }
+.about-float-1 { --orbit-radius: 140px; --orbit-speed: 16s; --orbit-delay: 0s; }
+.about-float-2 { --orbit-radius: 180px; --orbit-speed: 26s; --orbit-delay: -5s; }
+.about-float-3 { --orbit-radius: 220px; --orbit-speed: 21s; --orbit-delay: -12s; }
+.about-float-4 { --orbit-radius: 160px; --orbit-speed: 18s; --orbit-delay: -7s; }
+.about-float-5 { --orbit-radius: 200px; --orbit-speed: 24s; --orbit-delay: -3s; }
+.about-float-6 { --orbit-radius: 240px; --orbit-speed: 30s; --orbit-delay: -16s; }
+.about-float-7 { --orbit-radius: 150px; --orbit-speed: 19s; --orbit-delay: -9s; }
+.about-float-8 { --orbit-radius: 210px; --orbit-speed: 23s; --orbit-delay: -14s; }
 
 @keyframes planet-orbit {
-  0% { transform: rotate(0deg) translateX(160px) rotate(0deg); }
-  100% { transform: rotate(360deg) translateX(160px) rotate(-360deg); }
+  0% { transform: rotate(0deg) translateX(var(--orbit-radius, 160px)) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(var(--orbit-radius, 160px)) rotate(-360deg); }
 }
 
 .interactive-card {
