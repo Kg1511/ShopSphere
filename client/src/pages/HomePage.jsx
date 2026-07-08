@@ -180,6 +180,22 @@ export default function HomePage() {
                   <p>On premium orders</p>
                 </div>
               </div>
+
+              <div className="floating-card float-4">
+                <div className="badge-icon">🔒</div>
+                <div className="badge-content">
+                  <h4>Secure Pay</h4>
+                  <p>100% Protected</p>
+                </div>
+              </div>
+
+              <div className="floating-card float-5">
+                <div className="badge-icon">🔄</div>
+                <div className="badge-content">
+                  <h4>Easy Returns</h4>
+                  <p>30-day policy</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

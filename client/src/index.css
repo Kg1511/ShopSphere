@@ -686,6 +686,15 @@ select.input-field option {
   gap: var(--space-md);
   animation: floatCard ease-in-out infinite alternate;
   z-index: 5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.floating-card:hover {
+  transform: translateY(-5px) scale(1.05) !important;
+  box-shadow: 0 10px 25px rgba(108, 99, 255, 0.4);
+  z-index: 10;
+  animation-play-state: paused;
 }
 
 .float-1 {
@@ -719,6 +728,20 @@ select.input-field option {
 .float-3 .badge-icon {
   background: rgba(255,255,255,0.2) !important;
   color: white !important;
+}
+
+.float-4 {
+  bottom: 25%;
+  right: -5%;
+  animation-duration: 5.5s;
+  animation-delay: -1s;
+}
+
+.float-5 {
+  top: 5%;
+  left: 10%;
+  animation-duration: 4.8s;
+  animation-delay: -2.5s;
 }
 
 @keyframes floatCard {
@@ -914,12 +937,15 @@ select.input-field option {
 /* Categories                 */
 /* ========================= */
 .categories-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: var(--space-md);
 }
 
 .category-card {
+  flex: 1 1 200px;
+  max-width: 280px;
   padding: var(--space-xl);
   text-align: center;
   background: var(--bg-glass);
