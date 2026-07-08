@@ -2216,14 +2216,14 @@ select.input-field option {
   animation-play-state: paused;
 }
 
-.float-1 { animation-delay: 0s; }
-.float-2 { animation-delay: -2.5s; }
-.float-3 { animation-delay: -5s; }
-.float-4 { animation-delay: -7.5s; }
-.float-5 { animation-delay: -10s; }
-.float-6 { animation-delay: -12.5s; }
-.float-7 { animation-delay: -15s; }
-.float-8 { animation-delay: -17.5s; }
+.about-float-1 { animation-delay: 0s; }
+.about-float-2 { animation-delay: -2.5s; }
+.about-float-3 { animation-delay: -5s; }
+.about-float-4 { animation-delay: -7.5s; }
+.about-float-5 { animation-delay: -10s; }
+.about-float-6 { animation-delay: -12.5s; }
+.about-float-7 { animation-delay: -15s; }
+.about-float-8 { animation-delay: -17.5s; }
 
 @keyframes planet-orbit {
   0% { transform: rotate(0deg) translateX(160px) rotate(0deg); }

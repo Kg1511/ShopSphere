@@ -51,14 +51,14 @@ export default function AboutPage() {
               <p>Passionate about building scalable web applications and intuitive user experiences.</p>
             </div>
           </div>
-          <div className="floating-icon float-1"><Code2 size={24} color="#00d4aa" /></div>
-          <div className="floating-icon float-2"><Layout size={24} color="#6c63ff" /></div>
-          <div className="floating-icon float-3"><Database size={24} color="#ef4444" /></div>
-          <div className="floating-icon float-4"><Cpu size={24} color="#f59e0b" /></div>
-          <div className="floating-icon float-5"><Terminal size={24} color="#ec4899" /></div>
-          <div className="floating-icon float-6"><Wifi size={24} color="#3b82f6" /></div>
-          <div className="floating-icon float-7"><Monitor size={24} color="#8b5cf6" /></div>
-          <div className="floating-icon float-8"><Smartphone size={24} color="#10b981" /></div>
+          <div className="floating-icon about-float-1"><Code2 size={24} color="#00d4aa" /></div>
+          <div className="floating-icon about-float-2"><Layout size={24} color="#6c63ff" /></div>
+          <div className="floating-icon about-float-3"><Database size={24} color="#ef4444" /></div>
+          <div className="floating-icon about-float-4"><Cpu size={24} color="#f59e0b" /></div>
+          <div className="floating-icon about-float-5"><Terminal size={24} color="#ec4899" /></div>
+          <div className="floating-icon about-float-6"><Wifi size={24} color="#3b82f6" /></div>
+          <div className="floating-icon about-float-7"><Monitor size={24} color="#8b5cf6" /></div>
+          <div className="floating-icon about-float-8"><Smartphone size={24} color="#10b981" /></div>
         </div>
       </div>
 
