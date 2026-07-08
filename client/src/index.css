@@ -2221,14 +2221,14 @@ select.input-field option {
   border-color: var(--accent-primary);
 }
 
-.float-1 { top: 5%; left: 15%; animation-delay: 0s; }
-.float-2 { top: 15%; right: 10%; animation-delay: -2s; }
-.float-3 { bottom: 10%; left: 10%; animation-delay: -4s; }
-.float-4 { bottom: 20%; right: 5%; animation-delay: -6s; }
-.float-5 { top: -5%; left: 50%; animation-delay: -1s; }
-.float-6 { bottom: -5%; right: 40%; animation-delay: -3s; }
-.float-7 { top: 40%; left: 0%; animation-delay: -5s; }
-.float-8 { top: 60%; right: -5%; animation-delay: -7s; }
+.float-1 { top: 10%; left: 20%; animation-delay: 0s; }
+.float-2 { top: 20%; right: 15%; animation-delay: -2s; }
+.float-3 { bottom: 15%; left: 15%; animation-delay: -4s; }
+.float-4 { bottom: 25%; right: 10%; animation-delay: -6s; }
+.float-5 { top: 5%; left: 50%; animation-delay: -1s; }
+.float-6 { bottom: 5%; right: 40%; animation-delay: -3s; }
+.float-7 { top: 50%; left: 5%; animation-delay: -5s; }
+.float-8 { top: 65%; right: 5%; animation-delay: -7s; }
 
 @keyframes float-orbit {
   0%, 100% { transform: translateY(0px) rotate(0deg); }

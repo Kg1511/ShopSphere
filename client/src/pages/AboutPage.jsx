@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Mail, Code2, Database, Layout, Sparkles, Terminal, Server, Globe, Cpu, Wifi, Monitor, Smartphone } from 'lucide-react';
+import { Mail, Code2, Database, Layout, Sparkles, Terminal, Server, Globe, Cpu, Wifi, Monitor, Smartphone, Zap, Star } from 'lucide-react';
 
 export default function AboutPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -99,6 +99,20 @@ export default function AboutPage() {
             </div>
             <h3 style={{ marginBottom: '1rem' }}>Responsive</h3>
             <p style={{ color: 'var(--text-secondary)' }}>Fully optimized for desktop, tablet, and mobile viewing, providing a native-app-like experience in the browser.</p>
+          </div>
+          <div className="project-card interactive-card">
+            <div className="card-icon" style={{ background: 'rgba(245, 158, 11, 0.1)', padding: '1rem', borderRadius: 'var(--radius-md)', display: 'inline-block', marginBottom: '1.5rem', color: '#f59e0b' }}>
+              <Zap size={32} />
+            </div>
+            <h3 style={{ marginBottom: '1rem' }}>High Performance</h3>
+            <p style={{ color: 'var(--text-secondary)' }}>Optimized rendering, smart state management, and efficient API calls ensure a blazing fast user experience.</p>
+          </div>
+          <div className="project-card interactive-card">
+            <div className="card-icon" style={{ background: 'rgba(236, 72, 153, 0.1)', padding: '1rem', borderRadius: 'var(--radius-md)', display: 'inline-block', marginBottom: '1.5rem', color: '#ec4899' }}>
+              <Star size={32} />
+            </div>
+            <h3 style={{ marginBottom: '1rem' }}>Premium UX</h3>
+            <p style={{ color: 'var(--text-secondary)' }}>Carefully crafted micro-interactions, smooth hover states, and gorgeous gradient accents that delight users.</p>
           </div>
         </div>
       </div>
