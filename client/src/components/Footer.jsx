@@ -18,7 +18,7 @@ export default function Footer() {
             <ul className="footer-links">
               <li><Link to="/products?category=Electronics">Electronics</Link></li>
               <li><Link to="/products?category=Fashion">Fashion</Link></li>
-              <li><Link to="/products?category=Home & Living">Home & Living</Link></li>
+              <li><Link to="/products?category=Home+%26+Living">Home & Living</Link></li>
               <li><Link to="/products?category=Sports">Sports</Link></li>
             </ul>
           </div>
