@@ -95,9 +95,12 @@ export default function HomePage() {
   }, []);
 
   useEffect(() => {
-    autoPlayRef.current = setInterval(next, 4000);
-    return () => clearInterval(autoPlayRef.current);
-  }, [activeSlide]);
+    if (isAnimating) return;
+    const interval = setInterval(() => {
+      goToSlide((activeSlide + 1) % testimonials.length, 'next');
+    }, 4000);
+    return () => clearInterval(interval);
+  }, [activeSlide, isAnimating]);
 
   return (
     <>
