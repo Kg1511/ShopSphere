@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Mail, Code2, Database, Layout, Sparkles, Terminal, Server, Globe, Cpu } from 'lucide-react';
+import { Mail, Code2, Database, Layout, Sparkles, Terminal, Server, Globe, Cpu, Wifi, Monitor, Smartphone } from 'lucide-react';
 
 export default function AboutPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -51,11 +51,14 @@ export default function AboutPage() {
               <p>Passionate about building scalable web applications and intuitive user experiences.</p>
             </div>
           </div>
-          <div className="floating-card float-1 interactive-card" style={{ padding: '1rem', width: 'auto' }}><Code2 size={24} color="var(--text-secondary)" /></div>
-          <div className="floating-card float-2 interactive-card" style={{ padding: '1rem', width: 'auto' }}><Layout size={24} color="var(--text-secondary)" /></div>
-          <div className="floating-card float-3 interactive-card" style={{ padding: '1rem', width: 'auto' }}><Database size={24} color="var(--text-secondary)" /></div>
-          <div className="floating-card float-4 interactive-card" style={{ padding: '1rem', width: 'auto' }}><Cpu size={24} color="var(--text-secondary)" /></div>
-          <div className="floating-card float-5 interactive-card" style={{ padding: '1rem', width: 'auto' }}><Terminal size={24} color="var(--text-secondary)" /></div>
+          <div className="floating-icon float-1"><Code2 size={24} color="#00d4aa" /></div>
+          <div className="floating-icon float-2"><Layout size={24} color="#6c63ff" /></div>
+          <div className="floating-icon float-3"><Database size={24} color="#ef4444" /></div>
+          <div className="floating-icon float-4"><Cpu size={24} color="#f59e0b" /></div>
+          <div className="floating-icon float-5"><Terminal size={24} color="#ec4899" /></div>
+          <div className="floating-icon float-6"><Wifi size={24} color="#3b82f6" /></div>
+          <div className="floating-icon float-7"><Monitor size={24} color="#8b5cf6" /></div>
+          <div className="floating-icon float-8"><Smartphone size={24} color="#10b981" /></div>
         </div>
       </div>
 
@@ -70,28 +73,28 @@ export default function AboutPage() {
         
         <div className="project-grid">
           <div className="project-card interactive-card">
-            <div className="card-icon" style={{ padding: '1rem', display: 'inline-block', marginBottom: '1rem', color: 'var(--accent-primary)' }}>
+            <div className="card-icon" style={{ background: 'rgba(108, 99, 255, 0.1)', padding: '1rem', borderRadius: 'var(--radius-md)', display: 'inline-block', marginBottom: '1.5rem', color: '#6c63ff' }}>
               <Layout size={32} />
             </div>
             <h3 style={{ marginBottom: '1rem' }}>Modern Design</h3>
             <p style={{ color: 'var(--text-secondary)' }}>Built with a focus on premium aesthetics, glassmorphism, fluid animations, and highly interactive UI components to wow the user.</p>
           </div>
           <div className="project-card interactive-card">
-            <div className="card-icon" style={{ padding: '1rem', display: 'inline-block', marginBottom: '1rem', color: 'var(--accent-primary)' }}>
+            <div className="card-icon" style={{ background: 'rgba(0, 212, 170, 0.1)', padding: '1rem', borderRadius: 'var(--radius-md)', display: 'inline-block', marginBottom: '1.5rem', color: '#00d4aa' }}>
               <Code2 size={32} />
             </div>
             <h3 style={{ marginBottom: '1rem' }}>MERN Stack</h3>
             <p style={{ color: 'var(--text-secondary)' }}>Powered by MongoDB, Express, React, and Node.js. A full-stack architecture ensuring robust performance and seamless data flow.</p>
           </div>
           <div className="project-card interactive-card">
-            <div className="card-icon" style={{ padding: '1rem', display: 'inline-block', marginBottom: '1rem', color: 'var(--accent-primary)' }}>
+            <div className="card-icon" style={{ background: 'rgba(239, 68, 68, 0.1)', padding: '1rem', borderRadius: 'var(--radius-md)', display: 'inline-block', marginBottom: '1.5rem', color: '#ef4444' }}>
               <Database size={32} />
             </div>
             <h3 style={{ marginBottom: '1rem' }}>Secure & Scalable</h3>
             <p style={{ color: 'var(--text-secondary)' }}>Features JWT authentication, password hashing, and scalable REST APIs capable of handling complex state and shopping logic.</p>
           </div>
           <div className="project-card interactive-card">
-            <div className="card-icon" style={{ padding: '1rem', display: 'inline-block', marginBottom: '1rem', color: 'var(--accent-primary)' }}>
+            <div className="card-icon" style={{ background: 'rgba(59, 130, 246, 0.1)', padding: '1rem', borderRadius: 'var(--radius-md)', display: 'inline-block', marginBottom: '1.5rem', color: '#3b82f6' }}>
               <Globe size={32} />
             </div>
             <h3 style={{ marginBottom: '1rem' }}>Responsive</h3>
